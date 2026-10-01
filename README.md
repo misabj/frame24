@@ -34,7 +34,7 @@ Vimeo linkovi za portfolio i dalje se unose kroz admin. Uvodni video je zaseban 
 
 ## Produkcija
 
-Lokalno se koristi SQLite fajl `local.db`. Za Vercel ili drugi serverless hosting napravite Turso/libSQL bazu i dodajte sledeće environment promenljive na hostingu:
+Lokalno se koristi SQLite fajl `local.db`. Bez Turso podešavanja Vercel koristi privremenu `/tmp` bazu, što je dovoljno za demonstraciju admina, ali izmene mogu nestati pri sledećem pokretanju serverless instance. Za trajne izmene napravite Turso/libSQL bazu i dodajte sledeće environment promenljive na hostingu:
 
 ```env
 TURSO_DATABASE_URL=libsql://...

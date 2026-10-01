@@ -1,4 +1,6 @@
 import { createClient } from "@libsql/client";
+import { join } from "node:path";
+import { tmpdir } from "node:os";
 
 export type Video = {
   id: number;
@@ -13,7 +15,8 @@ export type Video = {
 };
 
 const client = createClient({
-  url: process.env.TURSO_DATABASE_URL ?? "file:local.db",
+  url: process.env.TURSO_DATABASE_URL
+    ?? `file:${process.env.VERCEL ? join(tmpdir(), "frame24.db").replaceAll("\\", "/") : "local.db"}`,
   authToken: process.env.TURSO_AUTH_TOKEN,
 });
 
