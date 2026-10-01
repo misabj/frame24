@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FRAME/24
 
-## Getting Started
+Prezentacioni sajt i Vimeo portfolio za video editing studio, sa zaštićenim admin panelom.
 
-First, run the development server:
+## Lokalno pokretanje
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Sajt će biti na `http://localhost:3000`, a admin na `/admin`. Lokalna početna lozinka je `markoadmin`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Kopirajte `.env.example` u `.env.local` i obavezno podesite jake vrednosti za:
 
-## Learn More
+```env
+ADMIN_PASSWORD=
+SESSION_SECRET=
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Video radovi
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+U admin panelu može da se unese pun Vimeo link ili samo numerički Vimeo ID. Moguće je dodavanje, izmena, brisanje i promena redosleda. Svi radovi prikazuju se na `/work`. Oznaka izdvojenog rada ostaje sačuvana, ali je novi raspored početne stranice ne koristi.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Javne stranice su `/`, `/work` i `/contact`, a admin prijava je `/admin/login`. Stare srpske adrese trajno preusmeravaju na engleske.
 
-## Deploy on Vercel
+## Tekstovi i video u uvodu
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Tekstovi početne stranice nalaze se u `src/lib/site-content.ts`.
+Polje `hero.videoUrl` prihvata direktan MP4 URL ili lokalnu putanju, npr. `/videos/hero.mp4` za fajl u `public/videos/hero.mp4`.
+Polje `hero.poster` određuje zamensku fotografiju. Dok je `videoUrl` prazan, prikazuje se samo fotografija. Video se prikazuje bez zvuka, u petlji, sa kontrolom za pauzu i poštovanjem sistemskog podešavanja za smanjeno kretanje.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vimeo linkovi za portfolio i dalje se unose kroz admin. Uvodni video je zaseban izvor. Tekstovi studija i formati rada u donjim sekcijama su zamenski sadržaj, ne preporuke stvarnih klijenata.
+
+## Produkcija
+
+Lokalno se koristi SQLite fajl `local.db`. Za Vercel ili drugi serverless hosting napravite Turso/libSQL bazu i dodajte sledeće environment promenljive na hostingu:
+
+```env
+TURSO_DATABASE_URL=libsql://...
+TURSO_AUTH_TOKEN=...
+ADMIN_PASSWORD=...
+SESSION_SECRET=...
+```
+
+Zatim pokrenite `npm run build`. Tabela i početni demo radovi biće automatski kreirani pri prvom pristupu praznoj bazi.
