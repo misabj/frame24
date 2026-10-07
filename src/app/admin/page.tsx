@@ -17,7 +17,7 @@ export default async function AdminPage() {
   return (
     <main className="admin-page">
       <header className="admin-header">
-        <div><Link className="login-brand" href="/" aria-label={`${siteBrand.name}, home`}><span>STUDIO</span><strong>MALASKO</strong></Link><p>Portfolio administration</p></div>
+        <div><Link className="login-brand" href="/" aria-label={`${siteBrand.name}, home`}><span>STUDIO</span><strong>MALSKO</strong></Link><p>Portfolio administration</p></div>
         <div className="admin-actions">
           <Link href="/work" target="_blank">View website <ExternalLink aria-hidden="true" /></Link>
           <form action={logout}><button type="submit" aria-label="Sign out"><LogOut aria-hidden="true" /></button></form>

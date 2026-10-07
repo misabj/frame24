@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-meta">
         <div className="footer-contact">
-          <Link className="brand" href="/" aria-label={`${siteBrand.name}, home`}><span>STUDIO</span><strong>MALASKO</strong></Link>
+          <Link className="brand" href="/" aria-label={`${siteBrand.name}, home`}><span>STUDIO</span><strong>MALSKO</strong></Link>
           <a href={`mailto:${siteBrand.email}`}>email: {siteBrand.email}</a>
           <p>Belgrade · Working worldwide</p>
         </div>

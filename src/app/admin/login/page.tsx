@@ -17,7 +17,7 @@ export default async function LoginPage({
 
   return (
     <main className="login-page">
-      <Link className="login-brand" href="/" aria-label={`${siteBrand.name}, home`}><span>STUDIO</span><strong>MALASKO</strong></Link>
+      <Link className="login-brand" href="/" aria-label={`${siteBrand.name}, home`}><span>STUDIO</span><strong>MALSKO</strong></Link>
       <form action={login} className="login-panel">
         <p className="eyebrow">Portfolio administration</p>
         <h1>Welcome<br />back.</h1>

@@ -12,7 +12,7 @@ export function SiteHeader() {
     <header className="site-header">
       <Link className="brand" href="/" aria-label={`${siteBrand.name}, home`}>
         <span>STUDIO</span>
-        <strong>MALASKO</strong>
+        <strong>MALSKO</strong>
       </Link>
       <div className="header-actions">
         <nav className={menuOpen ? "is-open" : undefined} aria-label="Main navigation">
