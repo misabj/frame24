@@ -15,9 +15,13 @@ button, input, textarea { font: inherit; }
 .site-header { position: relative; z-index: 5; display: flex; align-items: center; justify-content: space-between; height: 108px; padding: 0 5vw; color: #fff; }
 .brand { display: flex; align-items: baseline; gap: .2rem; font: 600 1.45rem/1 var(--font-display), sans-serif; letter-spacing: 0; }
 .brand strong { color: var(--accent); font-weight: 600; }
+.header-actions { display: flex; align-items: center; gap: 2.5rem; }
 .site-header nav { display: flex; gap: 3rem; font-size: .73rem; font-weight: 700; text-transform: uppercase; }
 .site-header nav a { padding: .5rem 0; border-bottom: 1px solid transparent; }
 .site-header nav a:hover { border-color: var(--accent); }
+.admin-entry { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; transition: color .2s, background .2s, border-color .2s; }
+.admin-entry:hover { color: #111; background: #fff; border-color: #fff; }
+.admin-entry svg { width: 14px; height: 14px; }
 .menu-button { display: none; border: 0; background: none; color: inherit; }
 .hero { position: relative; min-height: 94svh; overflow: hidden; color: #fff; background: linear-gradient(90deg, rgba(0,0,0,.76), rgba(0,0,0,.12)), url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2200&q=88") center/cover; }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.48), transparent 50%); }
@@ -88,9 +92,11 @@ button, input, textarea { font: inherit; }
 
 @media (max-width: 760px) {
 	.site-header { height: 80px; padding-inline: 1.25rem; }
+	.header-actions { gap: 1rem; }
 	.site-header nav { display: none; }
 	.site-header nav.is-open { position: absolute; z-index: -1; inset: 0; top: 0; display: flex; flex-direction: column; justify-content: center; gap: 2rem; min-height: 100svh; padding: 5rem 1.25rem; color: #fff; background: #10100f; font: 500 3.8rem/.9 var(--font-display); }
 	.site-header nav.is-open a { border: 0; }
+	.admin-entry { width: 34px; height: 34px; }
 	.menu-button { display: block; }
 	.hero { min-height: 90svh; background-position: 58% center; }
 	.hero-copy { margin-top: 13vh; }

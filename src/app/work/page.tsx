@@ -11,12 +11,13 @@ export default async function WorkPage() {
   return (
     <div className="public-site">
       <main className="inner-page">
-        <div className="dark-header"><SiteHeader /></div>
-        <header className="work-intro">
-          <p className="eyebrow">Selected projects / 2024—2026</p>
-          <h1>Work that<br />speaks <em>volumes.</em></h1>
-          <p>Brand films, campaigns and documentary stories brought to life in the edit.</p>
-        </header>
+        <section className="work-banner">
+          <SiteHeader />
+          <header className="work-intro">
+            <p className="eyebrow">Stories brought to life through film</p>
+            <h1>BRAND FILMS · CAMPAIGNS · MUSIC VIDEOS · DOCUMENTARY</h1>
+          </header>
+        </section>
         <section className="all-work">
           {videos.map((video, index) => (
             <VideoShowcase key={video.id} video={video} index={index} />

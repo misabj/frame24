@@ -3,8 +3,8 @@ export const siteContent = {
        tagline: "COMMERCIAL · PROMOTIONAL · DOCUMENTARY",
        title: "STORIES THAT MOVE BRANDS",
        button: "LET'S CREATE A FILM",
-    videoUrl: "",
-    poster: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=2200&q=85",
+    videoUrl: "/media/hero-video.mp4",
+    poster: "/media/behind-scenes-01.jpg",
   },
   about: {
        title: "EVERY GREAT FILM STARTS WITH A GREAT STORY.",
