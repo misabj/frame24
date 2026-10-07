@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start:cpanel": "node server.cjs",
     "lint": "eslint"
   },
   "dependencies": {

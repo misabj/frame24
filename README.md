@@ -46,3 +46,23 @@ SESSION_SECRET=...
 ```
 
 Zatim pokrenite `npm run build`. Tabela i početni demo radovi biće automatski kreirani pri prvom pristupu praznoj bazi.
+
+## Dream Web / cPanel
+
+U Setup Node.js App izaberite Node.js 22, Production, application root `studiomalsko`, URL `studiomalsko.com` bez dodatne putanje i startup file `server.cjs`.
+
+U cPanel environment variables obavezno unesite `ADMIN_PASSWORD` (jaka, jedinstvena lozinka) i `SESSION_SECRET` (nasumican secret od najmanje 32 bajta). Nemojte koristiti razvojne vrednosti. Startup fajl odbija pokretanje ako ove promenljive nisu postavljene. Ne postavljajte `VERCEL` na Dream Web hostingu.
+
+Uploadujte i raspakujte `studiomalsko-cpanel.zip` u `/home/studiom2/studiomalsko`. Fajl `server.cjs` i `package.json` moraju biti direktno u tom folderu, bez dodatnog ugnjezdenog foldera. ZIP ne sadrzi lozinke, lokalnu bazu, `.next` ni Windows `node_modules`.
+
+U cPanel Terminalu ili kroz SSH prvo pokrenite komandu za aktivaciju Node okruzenja koju prikazuje Setup Node.js App, pa:
+
+```bash
+cd ~/studiomalsko
+npm install --include=dev
+npm run build
+```
+
+Paketi i build se prave na serveru; nemojte uploadovati Windows `node_modules`. Zatim kliknite Restart u Setup Node.js App. Passenger pokrece `server.cjs`; ne pokrecite dodatni `npm start` proces kroz terminal. Ako Terminal/SSH nije dostupan ili build premaši limite paketa, obratite se Dream Web podrsci za instalaciju i build Node aplikacije.
+
+Na ovom hostingu se bez Turso promenljivih koristi trajna lokalna baza `local.db` u application root folderu. Pri sledecim uploadima je nemojte brisati niti prepisivati. Napravite zasebnu rezervnu kopiju baze i podesite SSL za domen pre admin prijave. Novi hosting pocinje sa demo radovima ako ne prenesete postojecu bazu na bezbedan nacin.

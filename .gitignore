@@ -19,6 +19,7 @@
 
 # production
 /build
+/studiomalsko-cpanel.zip
 
 # misc
 .DS_Store
