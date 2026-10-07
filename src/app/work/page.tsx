@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 import { VideoShowcase } from "@/components/video-showcase";
 import { getVideos } from "@/lib/videos";
 
-export const metadata = { title: "Our work — FRAME/24" };
+export const metadata = { title: "Our work", alternates: { canonical: "/work" } };
 
 export default async function WorkPage() {
   const videos = await getVideos();

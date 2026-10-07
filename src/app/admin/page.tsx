@@ -5,9 +5,10 @@ import { redirect } from "next/navigation";
 import { AdminVideoForm } from "@/components/admin-video-form";
 import { isAuthenticated } from "@/lib/auth";
 import { getVideos } from "@/lib/videos";
+import { siteBrand } from "@/lib/site-content";
 import { addVideo, editVideo, logout, removeVideo } from "./actions";
 
-export const metadata = { title: "Portfolio admin — FRAME/24" };
+export const metadata = { title: "Portfolio admin" };
 
 export default async function AdminPage() {
   if (!(await isAuthenticated())) redirect("/admin/login");
@@ -16,7 +17,7 @@ export default async function AdminPage() {
   return (
     <main className="admin-page">
       <header className="admin-header">
-        <div><Link className="login-brand" href="/" aria-label="FRAME 24, home"><span>FRAME</span><strong>/24</strong></Link><p>Portfolio administration</p></div>
+        <div><Link className="login-brand" href="/" aria-label={`${siteBrand.name}, home`}><span>STUDIO</span><strong>MALASKO</strong></Link><p>Portfolio administration</p></div>
         <div className="admin-actions">
           <Link href="/work" target="_blank">View website <ExternalLink aria-hidden="true" /></Link>
           <form action={logout}><button type="submit" aria-label="Sign out"><LogOut aria-hidden="true" /></button></form>

@@ -4,6 +4,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteContent } from "@/lib/site-content";
 
+export const metadata = { alternates: { canonical: "/" } };
+
 export default function Home() {
   return (
     <div className="public-site">

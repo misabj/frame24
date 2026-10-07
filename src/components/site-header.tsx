@@ -3,15 +3,16 @@
 import { LogIn, Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { siteBrand } from "@/lib/site-content";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="FRAME 24, home">
-        <span>FRAME</span>
-        <strong>/24</strong>
+      <Link className="brand" href="/" aria-label={`${siteBrand.name}, home`}>
+        <span>STUDIO</span>
+        <strong>MALASKO</strong>
       </Link>
       <div className="header-actions">
         <nav className={menuOpen ? "is-open" : undefined} aria-label="Main navigation">

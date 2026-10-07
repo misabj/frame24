@@ -1,17 +1,18 @@
 import Link from "next/link";
+import { siteBrand } from "@/lib/site-content";
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-meta">
         <div className="footer-contact">
-          <Link className="brand" href="/" aria-label="FRAME 24, home"><span>FRAME</span><strong>/24</strong></Link>
-          <a href="mailto:studio@frame24.rs">email: studio@frame24.rs</a>
+          <Link className="brand" href="/" aria-label={`${siteBrand.name}, home`}><span>STUDIO</span><strong>MALASKO</strong></Link>
+          <a href={`mailto:${siteBrand.email}`}>email: {siteBrand.email}</a>
           <p>Belgrade · Working worldwide</p>
         </div>
         <nav aria-label="Footer navigation"><Link href="/work">OUR WORK</Link><Link href="/contact">CONTACT</Link></nav>
       </div>
-      <p className="footer-credit">© {new Date().getFullYear()} FRAME/24</p>
+      <p className="footer-credit">© {new Date().getFullYear()} {siteBrand.name}</p>
     </footer>
   );
 }

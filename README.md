@@ -1,6 +1,8 @@
-# FRAME/24
+# Studio Malasko
 
 Prezentacioni sajt i Vimeo portfolio za video editing studio, sa zaštićenim admin panelom.
+
+Produkcijski domen: `https://studiomalasko.com`. Naziv, domen i kontakt adresa nalaze se u objektu `siteBrand` u `src/lib/site-content.ts`. Adresa `studio@studiomalasko.com` mora biti aktivirana kod email provajdera; kontakt forma koristi lokalni email klijent preko `mailto` linka. Domen se zasebno povezuje u Vercel Domains i DNS podesavanjima.
 
 ## Lokalno pokretanje
 

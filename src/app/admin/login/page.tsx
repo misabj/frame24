@@ -3,8 +3,9 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { login } from "../actions";
 import { isAuthenticated } from "@/lib/auth";
+import { siteBrand } from "@/lib/site-content";
 
-export const metadata = { title: "Admin sign in — FRAME/24" };
+export const metadata = { title: "Admin sign in" };
 
 export default async function LoginPage({
   searchParams,
@@ -16,7 +17,7 @@ export default async function LoginPage({
 
   return (
     <main className="login-page">
-      <Link className="login-brand" href="/" aria-label="FRAME 24, home"><span>FRAME</span><strong>/24</strong></Link>
+      <Link className="login-brand" href="/" aria-label={`${siteBrand.name}, home`}><span>STUDIO</span><strong>MALASKO</strong></Link>
       <form action={login} className="login-panel">
         <p className="eyebrow">Portfolio administration</p>
         <h1>Welcome<br />back.</h1>

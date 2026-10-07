@@ -128,8 +128,8 @@ button, input, textarea { font: inherit; }
 }
 
 .login-page { min-height: 100svh; display: grid; grid-template-columns: .8fr 1.2fr; color: #fff; background: var(--ink); }
-.login-brand { font: 600 1.5rem var(--font-display); }
-.login-brand strong { color: var(--accent); }
+.login-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; flex-shrink: 0; font: 600 12px/1 var(--font-display); }
+.login-brand strong { color: var(--accent); font-size: 26px; }
 .login-page > .login-brand { padding: 3rem 4vw; background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.78)), url("/media/behind-scenes-03.JPEG") center/cover; }
 .login-panel { align-self: center; width: min(520px, 82%); margin: auto; }
 .login-panel h1 { margin: 1rem 0 4rem; font: 500 clamp(4rem, 7vw, 7rem)/.8 var(--font-display); text-transform: uppercase; }
